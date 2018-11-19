@@ -6,11 +6,9 @@
 */
 //9:11 PM 11/18/2018
 #pragma once
-#include <iostream>
-#include <v8.h>
-#include <exp.h>
-#include <compiler.h>
-#include <stdio.h>  /* defines FILENAME_MAX */
+#if !defined(_global_h)
+#include "global_h.h"
+#endif
 #if !defined(_WIN32) && (defined(__unix__) || defined(__unix) || (defined(__APPLE__) && defined(__MACH__)))
 #include <unistd.h>
 #define get_current_dir getcwd
@@ -18,12 +16,6 @@
 #include <direct.h>
 #define get_current_dir _getcwd
 #endif//!_WIN32
-#include<iostream>
-
-#ifndef _INC_STDLIB
-#include <stdlib.h>
-#endif // !_INC_STDLIB
-#include <regex>
 #if !defined(_util_h)
 #define _util_h
 typedef enum {

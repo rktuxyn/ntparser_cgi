@@ -14,10 +14,7 @@
 #if !defined(_os_support_h)
 #include "../os_support.h"
 #endif
-#include <list>
 #include <libpq-fe.h>
-#include <regex>
-#include <map>
 #if !defined(_pg_sql_h)
 #define _pg_sql_h
 #if defined(WIN32) || defined(_WIN64)
