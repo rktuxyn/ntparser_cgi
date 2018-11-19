@@ -17,10 +17,10 @@
 #include <libpq-fe.h>
 #if !defined(_pg_sql_h)
 #define _pg_sql_h
-#if defined(WIN32) || defined(_WIN64)
-#define LIBPQ_C_DLL				"libpq.dll"
-#else
+#if !(defined(_WIN32)||defined(_WIN64)) && (defined(__unix__) || defined(__unix) || (defined(__APPLE__) && defined(__MACH__)))
 #define LIBPQ_C_DLL				"libpq.so.5"
+#else
+#define LIBPQ_C_DLL				"libpq.dll"
 #endif
 #define LIBPQ_DLL_LOAD_ERROR	"Error loading PostgreSQL " LIBPQ_C_DLL ": " 
 //#include "pg_sql_parameters.h"
